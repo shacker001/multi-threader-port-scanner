@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app/css/index.css' %}">
+    <title>ThreaderScan</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Loading animation -->
+        <div class="loader"></div>
+
+        <!-- Content -->
+        <div class="content">
+            <h1>Welcome to ThreaderScan</h1>
+            <form action="{% url 'app:port_scan' %}" method="post">
+                {% csrf_token %}
+                <!-- Form fields -->
+                <label for="target_range">Target IP Range (CIDR format, e.g., 192.168.0.0/24) </label> <br><br>
+                <label for="target_range">IP Range: </label>
+                <input type="text" id="target_range" name="target_range" required><br><br>
+                <label for="start_port">Start Port: </label>
+                <input type="number" id="start_port" name="start_port" required><br><br>
+                <label for="end_port">End Port: &nbsp; </label>
+                <input type="number" id="end_port" name="end_port" required><br><br>
+                <button type="submit">Scan Ports</button>
+            </form>
+        </div>
+
+        <!-- JavaScript for showing/hiding loader -->
+        <script src="{% static 'app/js/loader.js' %}"></script>
+    </div>
+
+</body>
+
+</html>

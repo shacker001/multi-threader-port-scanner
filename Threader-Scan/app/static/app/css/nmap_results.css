@@ -1,0 +1,59 @@
+/* nmap_results.html styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #666;
+}
+
+ul {
+    list-style:square;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+        /* CSS styles for loading animation */
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    /* Hide loader initially */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.content {
+    display: none;
+    margin-left: 40px;
+    /* border: solid #333; */
+    /* Hide content initially */
+}
+.container {
+    border:#3498db solid 25px;
+}

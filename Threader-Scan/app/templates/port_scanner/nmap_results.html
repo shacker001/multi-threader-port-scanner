@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app/css/nmap_results.css' %}">
+    <title>Nmap Results</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Loading animation -->
+        <div class="loader"></div>
+
+        <!-- Content -->
+        <div class="content">
+            <h1>Nmap Results</h1>
+            {% for result in nmap_results %}
+            <h2>Host: {{ result.ip }}</h2>
+            <h3>Open Ports:</h3>
+            <ul>
+                {% for port in result.open_ports %}
+                <li>{{ port }}</li>
+                {% endfor %}
+            </ul>
+            <h3>Services:</h3>
+            <ul>
+                {% for service in result.services %}
+                <li>Port: {{ service.port }}, Name: {{ service.name }}, Product: {{ service.product }}, Version:
+                    {{service.version }}</li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </div>
+
+        <!-- JavaScript for showing/hiding loader -->
+        <script src="{% static 'app/js/loader.js' %}"></script>
+    </div>
+</body>
+
+</html>

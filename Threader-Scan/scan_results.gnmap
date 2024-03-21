@@ -1,0 +1,4 @@
+# Nmap 7.94 scan initiated Sun Mar 17 09:17:07 2024 as: nmap -p 21,80,443,3306, -sV -sC -T4 -Pn -oA scan_results 127.0.0.1/32
+Host: 127.0.0.1 (localhost)	Status: Up
+Host: 127.0.0.1 (localhost)	Ports: 21/open/tcp//ftp//ProFTPD/, 80/open/tcp//http//Apache httpd 2.4.58 ((Unix) OpenSSL|1.1.1w PHP|8.2.12 mod_perl|2.0.12 Perl|v5.34.1)/, 443/open/tcp//ssl|http//Apache httpd 2.4.58 ((Unix) OpenSSL|1.1.1w PHP|8.2.12 mod_perl|2.0.12 Perl|v5.34.1)/, 3306/open/tcp//mysql//MySQL 5.5.5-10.4.32-MariaDB/
+# Nmap done at Sun Mar 17 09:17:23 2024 -- 1 IP address (1 host up) scanned in 15.86 seconds
