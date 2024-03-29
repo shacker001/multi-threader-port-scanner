@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app/css/help.css' %}">
+    <title>Help</title>
+</head>
+
+<body>
+    <header class="top-area">
+        <div class="header-area">
+            <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
+                <div class="header-container">
+                    <div id="navbar-menu">
+                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class=" smooth-menu"><a href="{% url 'app:index' %}">Home</a></li>
+                            <!-- <li class="smooth-menu"><a href="{% url 'app:port_scan' %}">Results</a></li> -->
+                            <!-- <li class="smooth-menu"><a href="{% url 'app:run_nmap_scan' %}">Nmap Results</a></li> -->
+                            <li class="smooth-menu"><a href="{% url 'app:help' %}">Help</a></li>
+                        </ul><!--/.nav -->
+                    </div><!-- /.navbar-collapse -->
+                </div><!--/.header-container-->
+            </nav><!--/nav-->
+            <!-- End Navigation -->
+        </div><!--/.header-area-->
+    </header><!-- /.top-area-->
+    <div class="containers">
+        <!-- Loading animation -->
+        <div class="loader"></div>
+        <div class="container">
+            <h1 class="text">Help Menu</h1>
+            <div class="help-content">
+                <pre>                
+                    <h2 style="text-align: center;">IPv4 CIDR (Classless Inter-Domain Routing) Notation</h2>
+                    [+] Single IPv4 address: 127.0.0.1/32
+                    [+] Small network (e.g., 256 addresses): 192.168.1.0/24
+                    [+] Medium network (e.g., 65,536 addresses): 10.0.0.0/12
+                    [+] Large network (e.g., 16,777,216 addresses): 172.16.0.0/12
+                
+                
+                    <h2 style="text-align: center;">IPv6 CIDR (Classless Inter-Domain Routing) Notation</h2>
+                    [+] Single IPv6 address: ::1/128
+                    [+] Small network (e.g., 2^64 addresses): 2001:0db8::/64
+                    [+] Medium network (e.g., 2^80 addresses): 2001:0db8:1234::/64
+                    [+] Large network (e.g., 2^96 addresses): 2001:0db8:1234:5678::/64
+
+
+                    <h2 style="text-align: center;">Usage on Command Line Interface (CLI) </h2>
+
+                    [+] Python threader.py   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to start the port scan
+                    [+] python3 threader.py  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to start the port scan
+                    [+] python threader.py -h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to display help menu
+                    [+] python threader.py --help   to display help menu         
+
+            </pre>
+            </div>
+        </div>
+        <script src="{% static 'app/js/loader.js' %}"></script>
+    </div>
+</body>
+
+</html>

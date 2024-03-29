@@ -35,7 +35,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-        /* CSS styles for loading animation */
+ /* CSS styles for loading animation */
 .loader {
     border: 16px solid #f3f3f3;
     /* Light grey */
@@ -72,7 +72,7 @@ button:hover {
     /* Hide content initially */
 }
 
-.container{
+.containers{
     /* margin-left: 20px; */
     background-color: #3498db;
     border: #007bff solid 20px;

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'app/css/results.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/new.css' %}">
     <title>Scan Result</title>
 </head>
 
@@ -16,9 +16,9 @@
                 <div class="header-container">
                     <div id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li class=" smooth-menu"><a href="{% url 'app:index' %}">Home</a></li>
-                            <!-- <li class="smooth-menu"><a href="{% url 'app:port_scan' %}">Scan Results</a></li> -->
-                            <!-- <li class="smooth-menu"><a href="{% url 'app:run_nmap_scan' %}">Nmap Results</a></li> -->
+                            <li class=" smooth-menu"><a href="#index">home</a></li>
+                            <li class="smooth-menu"><a href="#results">Scan Results</a></li>
+                            <li class="smooth-menu"><a href="#nmap_result">Nmap Results</a></li>
                             <li class="smooth-menu"><a href="{% url 'app:help' %}">Help</a></li>
                         </ul><!--/.nav -->
                     </div><!-- /.navbar-collapse -->
@@ -27,38 +27,21 @@
             <!-- End Navigation -->
         </div><!--/.header-area-->
     </header><!-- /.top-area-->
-
-    <div class="containers">
+    <div class="container">
         <!-- Loading animation -->
         <div class="loader"></div>
 
         <!-- Content -->
-        <div class="container">
+        <div class="content">
             <h1 class="text">Scan Result</h1>
             <p>Scanning target IP range: {{ target_range }}</p>
-            <p>Port Scan completed in: {{ total }}</p> <br>
-            <h2 style="border-bottom: 2px solid; text-align: center;">Discovered Ports</h2>
-            <div class="underline"></div>
-            <div class="discovered-ports">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>IP</th>
-                            <th>Port</th>
-                            <th>Service</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for port in discovered_ports %}
-                        <tr>
-                            <td>{{ port.ip }}</td>
-                            <td>{{ port.port }}</td>
-                            <td>{{ port.service }}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div> <br>
+            <p>Port Scan completed in: {{ total }}</p>
+            <h2>Discovered Ports:</h2>
+            <ul>
+                {% for port in discovered_ports %}
+                <li>IP: {{ port.ip }}, Port: {{ port.port }}, Service: {{ port.service }}</li>
+                {% endfor %}
+            </ul>
             <p>Port scan completed.</p>
             <p>ThreaderScan recommends the following Nmap scan:</p>
             <p>{{ nmap_command }}</p>
@@ -73,7 +56,7 @@
                         <div class="form-row submit-btn">
                             <div class="input-data">
                                 <div class="inner"></div>
-                                <input type="submit" value="Run Nmap Scan">
+                                <input type="submit" value="Nmap Scan">
                             </div>
                         </div>
                     </div>
@@ -84,7 +67,27 @@
 
     <!-- JavaScript for showing/hiding loader -->
     <script src="{% static 'app/js/loader.js' %}"></script>
+    
+    <!-- <script>
+        // Function to show loader animation
+        function showLoader() {
+            document.querySelector('.loader').style.display = 'block'; // Display the loader
+            document.querySelector('.container').style.display = 'none'; // Hide the content
+        }
 
+        // Function to hide loader animation
+        function hideLoader() {
+            document.querySelector('.loader').style.display = 'none'; // Hide the loader
+            document.querySelector('.container').style.display = 'block'; // Display the content
+        }
+
+        // Show loader initially
+        showLoader();
+
+        // Simulate loading delay (2 seconds) and then hide loader
+        setTimeout(hideLoader, 2000); // Adjust delay time as needed (in milliseconds)
+
+    </script> -->
 </body>
 
 </html>

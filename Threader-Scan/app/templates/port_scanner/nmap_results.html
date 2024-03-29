@@ -7,32 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'app/css/nmap_results.css' %}">
     <title>Nmap Results</title>
-
 </head>
 
 <body>
-    <div class="container">
+    <header class="top-area">
+        <div class="header-area">
+            <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
+                <div class="header-container">
+                    <div id="navbar-menu">
+                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class=" smooth-menu"><a href="{% url 'app:index' %}">Home</a></li>
+                            <!-- <li class="smooth-menu"><a href="{% url 'app:port_scan' %}">Scan Results</a></li> -->
+                            <!-- <li class="smooth-menu"><a href="{% url 'app:run_nmap_scan' %}">Nmap Results</a></li> -->
+                            <li class="smooth-menu"><a href="{% url 'app:help' %}">Help</a></li>
+                        </ul><!--/.nav -->
+                    </div><!-- /.navbar-collapse -->
+                </div><!--/.header-container-->
+            </nav><!--/nav-->
+            <!-- End Navigation -->
+        </div><!--/.header-area-->
+    </header><!-- /.top-area-->
+    <div class="containers">
         <!-- Loading animation -->
         <div class="loader"></div>
 
         <!-- Content -->
-        <div class="content">
-            <h1>Nmap Results</h1>
+        <div class="container">
+            <div class="text">Nmap Results</div>
             {% for result in nmap_results %}
-            <h2>Host: {{ result.ip }}</h2>
-            <h3>Open Ports:</h3>
-            <ul>
-                {% for port in result.open_ports %}
-                <li>{{ port }}</li>
-                {% endfor %}
-            </ul>
-            <h3>Services:</h3>
-            <ul>
-                {% for service in result.services %}
-                <li>Port: {{ service.port }}, Name: {{ service.name }}, Product: {{ service.product }}, Version:
-                    {{service.version }}</li>
-                {% endfor %}
-            </ul>
+            <div class="result">
+                <h2>Host: {{ result.ip }}</h2>
+                <div class="section">
+                    <h3>Open Ports</h3>
+                    <ul>
+                        {% for port in result.open_ports %}
+                        <li>{{ port }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="section">
+                    <h3>Services</h3>
+                    <ul>
+                        {% for service in result.services %}
+                        <li>Port: {{ service.port }}, Name: {{ service.name }}, Product: {{ service.product }}, Version:
+                            {{service.version }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
             {% endfor %}
         </div>
 
