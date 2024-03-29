@@ -1,53 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE nmaprun>
 <?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
-<!-- Nmap 7.94 scan initiated Thu Mar 21 16:38:09 2024 as: nmap -p 21,80,3306,8080, -sV -sC -T4 -Pn -oX scan_results.xml 127.0.0.1/32 -->
-<nmaprun scanner="nmap" args="nmap -p 21,80,3306,8080, -sV -sC -T4 -Pn -oX scan_results.xml 127.0.0.1/32" start="1711028289" startstr="Thu Mar 21 16:38:09 2024" version="7.94" xmloutputversion="1.05">
-<scaninfo type="connect" protocol="tcp" numservices="4" services="21,80,3306,8080"/>
+<!-- Nmap 7.94 scan initiated Sat Jan 27 00:59:44 2024 as: nmap -p 21,80,443,3306, -sV -sC -T4 -Pn -oX scan_results.xml 127.0.0.1/32 -->
+<nmaprun scanner="nmap" args="nmap -p 21,80,443,3306, -sV -sC -T4 -Pn -oX scan_results.xml 127.0.0.1/32" start="1706306384" startstr="Sat Jan 27 00:59:44 2024" version="7.94" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="4" services="21,80,443,3306"/>
 <verbose level="0"/>
 <debugging level="0"/>
-<host starttime="1711028291" endtime="1711028440"><status state="up" reason="user-set" reason_ttl="0"/>
+<host starttime="1706306386" endtime="1706306400"><status state="up" reason="user-set" reason_ttl="0"/>
 <address addr="127.0.0.1" addrtype="ipv4"/>
 <hostnames>
 <hostname name="localhost" type="PTR"/>
 </hostnames>
 <ports><port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ftp" product="ProFTPD" method="probed" conf="10"><cpe>cpe:/a:proftpd:proftpd</cpe></service></port>
-<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache httpd" version="2.4.57" extrainfo="(Debian)" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.57</cpe></service><script id="http-server-header" output="Apache/2.4.57 (Debian)"><elem>Apache/2.4.57 (Debian)</elem>
-</script><script id="http-title" output="Apache2 Debian Default Page: It works"><elem key="title">Apache2 Debian Default Page: It works</elem>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache httpd" version="2.4.58" extrainfo="(Unix) OpenSSL/1.1.1w PHP/8.2.12 mod_perl/2.0.12 Perl/v5.34.1" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.58</cpe></service><script id="http-server-header" output="Apache/2.4.58 (Unix) OpenSSL/1.1.1w PHP/8.2.12 mod_perl/2.0.12 Perl/v5.34.1"><elem>Apache/2.4.58 (Unix) OpenSSL/1.1.1w PHP/8.2.12 mod_perl/2.0.12 Perl/v5.34.1</elem>
+</script><script id="http-title" output="Welcome to XAMPP&#xa;Requested resource was http://localhost/dashboard/"><elem key="title">Welcome to XAMPP</elem>
+<elem key="redirect_url">http://localhost/dashboard/</elem>
 </script></port>
-<port protocol="tcp" portid="3306"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="mysql" product="MySQL" version="5.5.5-10.11.6-MariaDB-0+deb12u1" method="probed" conf="10"><cpe>cpe:/a:mariadb:mariadb:5.5.5-10.11.6-mariadb-0%2Bdeb12u1</cpe></service><script id="mysql-info" output="&#xa;  Protocol: 10&#xa;  Version: 5.5.5-10.11.6-MariaDB-0+deb12u1&#xa;  Thread ID: 45&#xa;  Capabilities flags: 63486&#xa;  Some Capabilities: SupportsTransactions, SupportsLoadDataLocal, FoundRows, Support41Auth, IgnoreSigpipes, ConnectWithDatabase, InteractiveClient, DontAllowDatabaseTableColumn, LongColumnFlag, SupportsCompression, Speaks41ProtocolNew, Speaks41ProtocolOld, IgnoreSpaceBeforeParenthesis, ODBCClient, SupportsMultipleStatments, SupportsMultipleResults, SupportsAuthPlugins&#xa;  Status: Autocommit&#xa;  Salt: .#`&lt;LF]&quot;/e/YRoXKQ2DB&#xa;  Auth Plugin Name: mysql_native_password"><elem key="Protocol">10</elem>
-<elem key="Version">5.5.5-10.11.6-MariaDB-0+deb12u1</elem>
-<elem key="Thread ID">45</elem>
+<port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Apache httpd" version="2.4.58" extrainfo="(Unix) OpenSSL/1.1.1w PHP/8.2.12 mod_perl/2.0.12 Perl/v5.34.1" tunnel="ssl" method="probed" conf="10"><cpe>cpe:/a:apache:http_server:2.4.58</cpe></service><script id="ssl-cert" output="Subject: commonName=localhost/organizationName=Apache Friends/stateOrProvinceName=Berlin/countryName=DE&#xa;Not valid before: 2004-10-01T09:10:30&#xa;Not valid after:  2010-09-30T09:10:30"><table key="subject">
+<elem key="commonName">localhost</elem>
+<elem key="countryName">DE</elem>
+<elem key="localityName">Berlin</elem>
+<elem key="organizationName">Apache Friends</elem>
+<elem key="stateOrProvinceName">Berlin</elem>
+</table>
+<table key="issuer">
+<elem key="commonName">localhost</elem>
+<elem key="countryName">DE</elem>
+<elem key="localityName">Berlin</elem>
+<elem key="organizationName">Apache Friends</elem>
+<elem key="stateOrProvinceName">Berlin</elem>
+</table>
+<table key="pubkey">
+<elem key="type">rsa</elem>
+<elem key="bits">1024</elem>
+<elem key="modulus">CCCB6454C2FAA37A81365F1BD5108175B742023183B1D55A76726A77BE626916ABEB3966B5203933D1B4017D2340249E601CA83283EA9DF1F2D9F018859DE1C0E299FF89A4F915BD5DBA3F392E2614488075EFB5C0946E2A62D242342C4A151758B05598116E91FD280D80C521C23EFB786F38314A78F2812D85C9B82BF186C9</elem>
+<elem key="exponent">65537</elem>
+</table>
+<table key="extensions">
+<table>
+<elem key="name">X509v3 Subject Key Identifier</elem>
+<elem key="value">13:FC:5F:9D:B8:12:78:10:D1:F1:3F:0E:52:AA:8B:A5:44:93:C7:52</elem>
+</table>
+<table>
+<elem key="name">X509v3 Authority Key Identifier</elem>
+<elem key="value">keyid:13:FC:5F:9D:B8:12:78:10:D1:F1:3F:0E:52:AA:8B:A5:44:93:C7:52&#xa;DirName:/C=DE/ST=Berlin/L=Berlin/O=Apache Friends/CN=localhost&#xa;serial:00</elem>
+</table>
+<table>
+<elem key="name">X509v3 Basic Constraints</elem>
+<elem key="value">CA:TRUE</elem>
+</table>
+</table>
+<elem key="sig_algo">md5WithRSAEncryption</elem>
+<table key="validity">
+<elem key="notBefore">2004-10-01T09:10:30</elem>
+<elem key="notAfter">2010-09-30T09:10:30</elem>
+</table>
+<elem key="md5">b18118f61a4dcb51df5e189c40dd3280</elem>
+<elem key="sha1">c4c9a1dc528d41ac1988f65db62f9ca922fbe711</elem>
+<elem key="pem">-&#45;&#45;&#45;&#45;BEGIN CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;MIIC5jCCAk+gAwIBAgIBADANBgkqhkiG9w0BAQQFADBcMQswCQYDVQQGEwJERTEP&#xa;MA0GA1UECBMGQmVybGluMQ8wDQYDVQQHEwZCZXJsaW4xFzAVBgNVBAoTDkFwYWNo&#xa;ZSBGcmllbmRzMRIwEAYDVQQDEwlsb2NhbGhvc3QwHhcNMDQxMDAxMDkxMDMwWhcN&#xa;MTAwOTMwMDkxMDMwWjBcMQswCQYDVQQGEwJERTEPMA0GA1UECBMGQmVybGluMQ8w&#xa;DQYDVQQHEwZCZXJsaW4xFzAVBgNVBAoTDkFwYWNoZSBGcmllbmRzMRIwEAYDVQQD&#xa;Ewlsb2NhbGhvc3QwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMzLZFTC+qN6&#xa;gTZfG9UQgXW3QgIxg7HVWnZyane+YmkWq+s5ZrUgOTPRtAF9I0AknmAcqDKD6p3x&#xa;8tnwGIWd4cDimf+JpPkVvV26PzkuJhRIgHXvtcCUbipi0kI0LEoVF1iwVZgRbpH9&#xa;KA2AxSHCPvt4bzgxSnjygS2Fybgr8YbJAgMBAAGjgbcwgbQwHQYDVR0OBBYEFBP8&#xa;X524EngQ0fE/DlKqi6VEk8dSMIGEBgNVHSMEfTB7gBQT/F+duBJ4ENHxPw5Sqoul&#xa;RJPHUqFgpF4wXDELMAkGA1UEBhMCREUxDzANBgNVBAgTBkJlcmxpbjEPMA0GA1UE&#xa;BxMGQmVybGluMRcwFQYDVQQKEw5BcGFjaGUgRnJpZW5kczESMBAGA1UEAxMJbG9j&#xa;YWxob3N0ggEAMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEEBQADgYEAFaDLTAkk&#xa;p8J2SJ84I7Fp6UVfnpnbkdE2SBLFRKccSYZpoX85J2Z7qmfaQ35p/ZJySLuOQGv/&#xa;IHlXFTt9VWT8meCpubcFl/mI701KBGhAX0DwD5OmkiLk3yGOREhy4Q8ZI+Eg75k7&#xa;WF65KAis5duvvVevPR1CwBk7H9CDe8czwrc=&#xa;-&#45;&#45;&#45;&#45;END CERTIFICATE-&#45;&#45;&#45;&#45;&#xa;</elem>
+</script><script id="http-title" output="Welcome to XAMPP&#xa;Requested resource was https://localhost/dashboard/"><elem key="title">Welcome to XAMPP</elem>
+<elem key="redirect_url">https://localhost/dashboard/</elem>
+</script><script id="ssl-date" output="TLS randomness does not represent time"></script><script id="http-server-header" output="Apache/2.4.58 (Unix) OpenSSL/1.1.1w PHP/8.2.12 mod_perl/2.0.12 Perl/v5.34.1"><elem>Apache/2.4.58 (Unix) OpenSSL/1.1.1w PHP/8.2.12 mod_perl/2.0.12 Perl/v5.34.1</elem>
+</script><script id="tls-alpn" output="&#xa;  http/1.1"><elem>http/1.1</elem>
+</script></port>
+<port protocol="tcp" portid="3306"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="mysql" product="MySQL" version="5.5.5-10.4.32-MariaDB" method="probed" conf="10"><cpe>cpe:/a:mysql:mysql:5.5.5-10.4.32-mariadb</cpe></service><script id="mysql-info" output="&#xa;  Protocol: 10&#xa;  Version: 5.5.5-10.4.32-MariaDB&#xa;  Thread ID: 12&#xa;  Capabilities flags: 63486&#xa;  Some Capabilities: Support41Auth, Speaks41ProtocolOld, FoundRows, SupportsTransactions, InteractiveClient, SupportsLoadDataLocal, Speaks41ProtocolNew, IgnoreSpaceBeforeParenthesis, ConnectWithDatabase, DontAllowDatabaseTableColumn, LongColumnFlag, ODBCClient, SupportsCompression, IgnoreSigpipes, SupportsMultipleStatments, SupportsMultipleResults, SupportsAuthPlugins&#xa;  Status: Autocommit&#xa;  Salt: TcwLVLZ^L?8&lt;aWnFQD@S&#xa;  Auth Plugin Name: mysql_native_password"><elem key="Protocol">10</elem>
+<elem key="Version">5.5.5-10.4.32-MariaDB</elem>
+<elem key="Thread ID">12</elem>
 <elem key="Capabilities flags">63486</elem>
 <table key="Some Capabilities">
-<elem>SupportsTransactions</elem>
-<elem>SupportsLoadDataLocal</elem>
-<elem>FoundRows</elem>
 <elem>Support41Auth</elem>
-<elem>IgnoreSigpipes</elem>
-<elem>ConnectWithDatabase</elem>
+<elem>Speaks41ProtocolOld</elem>
+<elem>FoundRows</elem>
+<elem>SupportsTransactions</elem>
 <elem>InteractiveClient</elem>
+<elem>SupportsLoadDataLocal</elem>
+<elem>Speaks41ProtocolNew</elem>
+<elem>IgnoreSpaceBeforeParenthesis</elem>
+<elem>ConnectWithDatabase</elem>
 <elem>DontAllowDatabaseTableColumn</elem>
 <elem>LongColumnFlag</elem>
-<elem>SupportsCompression</elem>
-<elem>Speaks41ProtocolNew</elem>
-<elem>Speaks41ProtocolOld</elem>
-<elem>IgnoreSpaceBeforeParenthesis</elem>
 <elem>ODBCClient</elem>
+<elem>SupportsCompression</elem>
+<elem>IgnoreSigpipes</elem>
 <elem>SupportsMultipleStatments</elem>
 <elem>SupportsMultipleResults</elem>
 <elem>SupportsAuthPlugins</elem>
 </table>
 <elem key="Status">Autocommit</elem>
-<elem key="Salt">.#`&lt;LF]&quot;/e/YRoXKQ2DB</elem>
+<elem key="Salt">TcwLVLZ^L?8&lt;aWnFQD@S</elem>
 <elem key="Auth Plugin Name">mysql_native_password</elem>
 </script></port>
-<port protocol="tcp" portid="8080"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http-proxy" servicefp="SF-Port8080-TCP:V=7.94%I=7%D=3/21%Time=65FC3849%P=x86_64-pc-linux-gnu%r(GetRequest,64B,&quot;HTTP/1\.1\x20200\x20OK\r\nConnection:\x20close\r\nCache-control:\x20no-cache,\x20no-store\r\nPragma:\x20no-cache\r\nX-Frame-Options:\x20DENY\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nX-Content-Type-Options:\x20nosniff\r\n\r\n&lt;html&gt;&lt;head&gt;&lt;title&gt;Burp\x20Suite\x20Community\x20Edition&lt;/title&gt;\r\n&lt;style\x20type=\&quot;text/css\&quot;&gt;\r\nbody\x20{\x20background:\x20#dedede;\x20font-family:\x20Arial,\x20sans-serif;\x20color:\x20#404042;\x20-webkit-font-smoothing:\x20antialiased;\x20}\r\n#container\x20{\x20padding:\x200\x2015px;\x20margin:\x2010px\x20auto;\x20background-color:\x20#ffffff;\x20}\r\na\x20{\x20word-wrap:\x20break-word;\x20}\r\na:link,\x20a:visited\x20{\x20color:\x20#e06228;\x20text-decoration:\x20none;\x20}\r\na:hover,\x20a:active\x20{\x20color:\x20#404042;\x20text-decoration:\x20underline;\x20}\r\nh1\x20{\x20font-size:\x201\.6em;\x20line-height:\x201\.2em;\x20font-weight:\x20normal;\x20color:\x20#404042;\x20}\r\nh2\x20{\x20font-size:\x201\.3em;\x20line-height:\x201\.2em;\x20padding:\x200;\x20margin:\x200\.8em\x200\x200\.3em\x200;\x20font-weight:\x20normal;\x20color:\x20#404042;}\r\n\.title,\x20\.navbar\x20{\x20color:\x20#ffffff;\x20background:\x20#e06228;\x20padding:\x2010px\x2015px;\x20&quot;)%r(HTTPOptions,64B,&quot;HTTP/1\.1\x20200\x20OK\r\nConnection:\x20close\r\nCache-control:\x20no-cache,\x20no-store\r\nPragma:\x20no-cache\r\nX-Frame-Options:\x20DENY\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nX-Content-Type-Options:\x20nosniff\r\n\r\n&lt;html&gt;&lt;head&gt;&lt;title&gt;Burp\x20Suite\x20Community\x20Edition&lt;/title&gt;\r\n&lt;style\x20type=\&quot;text/css\&quot;&gt;\r\nbody\x20{\x20background:\x20#dedede;\x20font-family:\x20Arial,\x20sans-serif;\x20color:\x20#404042;\x20-webkit-font-smoothing:\x20antialiased;\x20}\r\n#container\x20{\x20padding:\x200\x2015px;\x20margin:\x2010px\x20auto;\x20background-color:\x20#ffffff;\x20}\r\na\x20{\x20word-wrap:\x20break-word;\x20}\r\na:link,\x20a:visited\x20{\x20color:\x20#e06228;\x20text-decoration:\x20none;\x20}\r\na:hover,\x20a:active\x20{\x20color:\x20#404042;\x20text-decoration:\x20underline;\x20}\r\nh1\x20{\x20font-size:\x201\.6em;\x20line-height:\x201\.2em;\x20font-weight:\x20normal;\x20color:\x20#404042;\x20}\r\nh2\x20{\x20font-size:\x201\.3em;\x20line-height:\x201\.2em;\x20padding:\x200;\x20margin:\x200\.8em\x200\x200\.3em\x200;\x20font-weight:\x20normal;\x20color:\x20#404042;}\r\n\.title,\x20\.navbar\x20{\x20color:\x20#ffffff;\x20background:\x20#e06228;\x20padding:\x2010px\x2015px;\x20&quot;);" method="probed" conf="10"/><script id="http-open-proxy" output="Potentially OPEN proxy.&#xa;Methods supported:CONNECTION"/><script id="http-title" output="Burp Suite Community Edition"><elem key="title">Burp Suite Community Edition</elem>
-</script><script id="fingerprint-strings" output="&#xa;  GetRequest, HTTPOptions: &#xa;    HTTP/1.1 200 OK&#xa;    Connection: close&#xa;    Cache-control: no-cache, no-store&#xa;    Pragma: no-cache&#xa;    X-Frame-Options: DENY&#xa;    Content-Type: text/html; charset=utf-8&#xa;    X-Content-Type-Options: nosniff&#xa;    &lt;html&gt;&lt;head&gt;&lt;title&gt;Burp Suite Community Edition&lt;/title&gt;&#xa;    &lt;style type=&quot;text/css&quot;&gt;&#xa;    body { background: #dedede; font-family: Arial, sans-serif; color: #404042; -webkit-font-smoothing: antialiased; }&#xa;    #container { padding: 0 15px; margin: 10px auto; background-color: #ffffff; }&#xa;    word-wrap: break-word; }&#xa;    a:link, a:visited { color: #e06228; text-decoration: none; }&#xa;    a:hover, a:active { color: #404042; text-decoration: underline; }&#xa;    font-size: 1.6em; line-height: 1.2em; font-weight: normal; color: #404042; }&#xa;    font-size: 1.3em; line-height: 1.2em; padding: 0; margin: 0.8em 0 0.3em 0; font-weight: normal; color: #404042;}&#xa;    .title, .navbar { color: #ffffff; background: #e06228; padding: 10px 15px;"><elem key="GetRequest, HTTPOptions">&#xa;    HTTP/1.1 200 OK&#xa;    Connection: close&#xa;    Cache-control: no-cache, no-store&#xa;    Pragma: no-cache&#xa;    X-Frame-Options: DENY&#xa;    Content-Type: text/html; charset=utf-8&#xa;    X-Content-Type-Options: nosniff&#xa;    &lt;html&gt;&lt;head&gt;&lt;title&gt;Burp Suite Community Edition&lt;/title&gt;&#xa;    &lt;style type=&quot;text/css&quot;&gt;&#xa;    body { background: #dedede; font-family: Arial, sans-serif; color: #404042; -webkit-font-smoothing: antialiased; }&#xa;    #container { padding: 0 15px; margin: 10px auto; background-color: #ffffff; }&#xa;    word-wrap: break-word; }&#xa;    a:link, a:visited { color: #e06228; text-decoration: none; }&#xa;    a:hover, a:active { color: #404042; text-decoration: underline; }&#xa;    font-size: 1.6em; line-height: 1.2em; font-weight: normal; color: #404042; }&#xa;    font-size: 1.3em; line-height: 1.2em; padding: 0; margin: 0.8em 0 0.3em 0; font-weight: normal; color: #404042;}&#xa;    .title, .navbar { color: #ffffff; background: #e06228; padding: 10px 15px;</elem>
-</script></port>
 </ports>
-<times srtt="13627" rttvar="7945" to="100000"/>
+<times srtt="10594" rttvar="6602" to="100000"/>
 </host>
-<runstats><finished time="1711028440" timestr="Thu Mar 21 16:40:40 2024" summary="Nmap done at Thu Mar 21 16:40:40 2024; 1 IP address (1 host up) scanned in 150.87 seconds" elapsed="150.87" exit="success"/><hosts up="1" down="0" total="1"/>
+<runstats><finished time="1706306400" timestr="Sat Jan 27 01:00:00 2024" summary="Nmap done at Sat Jan 27 01:00:00 2024; 1 IP address (1 host up) scanned in 16.42 seconds" elapsed="16.42" exit="success"/><hosts up="1" down="0" total="1"/>
 </runstats>
 </nmaprun>
