@@ -1,0 +1,4 @@
+# Nmap 7.94 scan initiated Thu Apr  4 11:17:44 2024 as: nmap -p 80 -sV -sC -T4 -Pn -oA 127.0.0.1 127.0.0.1
+Host: 127.0.0.1 (localhost)	Status: Up
+Host: 127.0.0.1 (localhost)	Ports: 80/open/tcp//http//Apache httpd 2.4.57 ((Debian))/
+# Nmap done at Thu Apr  4 11:17:52 2024 -- 1 IP address (1 host up) scanned in 7.96 seconds

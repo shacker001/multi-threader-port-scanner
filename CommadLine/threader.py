@@ -1,9 +1,3 @@
-#!/usr/bin/python3
-# ThreaderScan - Multi-Threader Port Scanner
-# A project by Sh4cker
-# v1.0.0
-# https://github.com/shacker001/multi-threader
-
 import socket
 import os
 import signal
@@ -39,11 +33,29 @@ def main():
     
     # Input IP and Port range
     target_range = input("  [+] Enter your target IP range (CIDR format, e.g., 192.168.0.0/24): ")
-    start_port   = int(input("  [+] Enter the Start Port: "))
-    end_port     = int(input("  [+] Enter the End Port: "))
+
+    # Input Start Port
+    while True:
+        try:
+            start_port = int(input("  [+] Enter the Start Port: "))
+            break
+        except ValueError:
+            print("  [!] Please enter a valid integer for the Start Port.")
+
+    # Input End Port
+    while True:
+        try:
+            end_port = int(input("  [+] Enter the End Port: "))
+            break
+        except ValueError:
+            print("  [!] Please enter a valid integer for the End Port.")
+
+    # start_port   = int(input("  [+] Enter the Start Port: "))
+    # start_port= int(start_port)
+    # end_port     = int(input("  [+] Enter the End Port: "))
     error = "Invalid Input"
     try:
-        ips = [str(ip) for ip in ip_network(target_range).hosts()]
+        ips = [str(ip) for ip in ip_network(target_range, strict=False).hosts()]
     except ValueError:
         print("\n[-] Invalid format. Please use a correct IP range in CIDR format (e.g., 192.168.0.0/24) [-]\n")
         sys.exit()
@@ -59,7 +71,8 @@ def main():
     print("        ==========[ OPEN PORTS ]===========\n")
 
     def portscan(ip, port):
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        family = socket.AF_INET6 if ':' in ip else socket.AF_INET
+        s = socket.socket(family, socket.SOCK_STREAM)
         try:
             portx = s.connect((ip, port))
             service_name = socket.getservbyport(port)
@@ -147,8 +160,8 @@ def help_options():
     helps = """
         ++++++++++++] HELP OPTIONS [++++++++++++
 
-        [+] python threader.py -h       to display help menu
-        [+] python threader.py --help   to display help menu
+        [+] python threader.py -h       to display help menu and exit
+        [+] python threader.py --help   to display help menu and exit
 
 
         [++] IPv4 CIDR (Classless Inter-Domain Routing) Notation [++]

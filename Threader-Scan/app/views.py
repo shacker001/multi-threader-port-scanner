@@ -26,7 +26,8 @@ def port_scan(request):
         t1 = datetime.now()
 
         def portscan(ip, port):
-            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            family = socket.AF_INET6 if ':' in ip else socket.AF_INET
+            with socket.socket(family, socket.SOCK_STREAM) as s:
                 try:
                     s.connect((ip, port))
                     service_name = socket.getservbyport(port)

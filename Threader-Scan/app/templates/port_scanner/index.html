@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'app/css/index.css' %}">
     <title>ThreaderScan</title>
 </head>
+
 <body>
     <header class="top-area">
         <div class="header-area">
@@ -26,7 +27,7 @@
             <!-- End Navigation -->
         </div><!--/.header-area-->
     </header><!-- /.top-area-->
-    
+
     <div class="containers">
         <!-- Loading animation -->
         <div class="loader"></div>
@@ -48,51 +49,31 @@
                 </div>
                 <div class="form-row">
                     <div class="input-data">
-                        <input type="text" id="startPort" name="start_port" required>
+                        <input type="number" id="startPort" name="start_port" required>
                         <div class="underline"></div>
                         <label for="startPort">Start Port</label>
                     </div>
                     <div class="input-data">
-                        <input type="text" id="endPort" name="end_port" required>
+                        <input type="number" id="endPort" name="end_port" required>
                         <div class="underline"></div>
                         <label for="endPort">End Port</label>
                     </div>
                 </div>
 
                 <!-- <div class="form-row"> -->
-                    <div class="underline"></div>
-                    <div class="form-row submit-btn">
-                        <div class="input-data">
-                            <div class="inner"></div>
-                            <input type="submit" value="Start Scan">
-                        </div>
+                <div class="underline"></div>
+                <div class="form-row submit-btn">
+                    <div class="input-data">
+                        <div class="inner"></div>
+                        <input type="submit" value="Start Scan">
                     </div>
+                </div>
                 <!-- </div> -->
             </form>
         </div>
         <!-- JavaScript for showing/hiding loader -->
         <script src="{% static 'app/js/loader.js' %}"></script>
-        <!-- <script>
-            // Function to show loader animation
-            function showLoader() {
-                document.querySelector('.loader').style.display = 'block'; // Display the loader
-                document.querySelector('.container').style.display = 'none'; // Hide the content
-            }
-
-            // Function to hide loader animation
-            function hideLoader() {
-                document.querySelector('.loader').style.display = 'none'; // Hide the loader
-                document.querySelector('.container').style.display = 'block'; // Display the content
-            }
-
-            // Show loader initially
-            showLoader();
-
-            // Simulate loading delay (2 seconds) and then hide loader
-            setTimeout(hideLoader, 2000); // Adjust delay time as needed (in milliseconds)
-
-        </script>
-    </div> -->
+    </div>
 </body>
 
 </html>

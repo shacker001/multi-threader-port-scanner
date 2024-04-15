@@ -1,0 +1,12 @@
+# Nmap 7.94 scan initiated Thu Apr  4 11:17:44 2024 as: nmap -p 80 -sV -sC -T4 -Pn -oA 127.0.0.1 127.0.0.1
+mass_dns: warning: Unable to determine any DNS servers. Reverse DNS is disabled. Try using --system-dns or specify valid servers with --dns-servers
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.020s latency).
+
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.57 ((Debian))
+|_http-title: Apache2 Debian Default Page: It works
+|_http-server-header: Apache/2.4.57 (Debian)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Apr  4 11:17:52 2024 -- 1 IP address (1 host up) scanned in 7.96 seconds
