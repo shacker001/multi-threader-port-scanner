@@ -14,5 +14,5 @@ function hideLoader() {
 showLoader();
 
 // Simulate loading delay (2 seconds) and then hide loader
-setTimeout(hideLoader, 2000); // Adjust delay time as needed (in milliseconds)
+setTimeout(hideLoader, 2000); // Delay time (in milliseconds)
 
