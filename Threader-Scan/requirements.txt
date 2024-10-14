@@ -1,0 +1,12 @@
+Django==4.2.2
+djangorestframework==3.14.0
+gunicorn==20.1.0
+pytz==2023.3
+sqlparse==0.4.4
+asgiref==3.6.0
+ipaddress==1.0.23
+requests==2.31.0
+django-crispy-forms==1.14.0
+crispy-bootstrap5==0.7
+psutil==5.9.5
+python-nmap==0.7.1
